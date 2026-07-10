@@ -32,7 +32,8 @@
 
 <div align="center">
 
-### ![Avatar Elena](/assets/elena-avatar-80px.png) Elena Hiener
+### ![Avatar Elena](https://github.com/ElenaH-2026/ElenaH-2026/blob/main/elena-avatar-80px.png) Elena Hiener
+
 
 </div>
 
