@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +13,34 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
+
 <body>
-    <h1 class="text-center mt-5">Quiz App</h1>
-    <p class="text-center">Willkommen zum Quiz!</p>
-    <button class="btn btn-secondary d-block mx-auto mt-3" id="startQuizBtn">Quiz starten</button>
+
+    <div class="d-flex vh-100">
+
+        <nav class="navbar-dark bg-dark flex-column p-3">
+            <a class="navbar-brand text-white" href="#">Quiz App - Home</a>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">HTML</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">CSS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">JavaScript</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="flex-grow-1 p-4 overflow-auto">
+            <h1 class="text-center mt-5">Quiz App</h1>
+            <p class="text-center">Willkommen zum Quiz!</p>
+            <button class="btn btn-secondary d-block mx-auto mt-3" id="startQuizBtn">Quiz starten</button>
+        </main>
+
+    </div>
 
 </body>
+
 </html>
