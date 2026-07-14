@@ -132,6 +132,8 @@ http://<deine_ip>:<live-server-port>
 │   README.md
 │   LICENSE.md
 │   index.html
+│   package-lock.json
+│   package.json
 │   script.js
 │   style.css
 │   
@@ -140,8 +142,11 @@ http://<deine_ip>:<live-server-port>
 │   ├───icons/
 │   └───img/
 │                 
-└───scripts/
-        database-questions.js
+├───scripts/
+│       database-questions.js
+│          
+└───styles/
+        bootstrap.min.css
     
 
 ```
