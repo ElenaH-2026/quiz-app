@@ -33,14 +33,26 @@ jobs:
 
       - name: Prepare Pages artifact
         run: |
-          mkdir -p _site/node_modules/bootstrap/dist/css
-          cp index.html style.css script.js _site/
-          cp -r assets scripts _site/
+          mkdir -p _site/styles
+
+          sed \
+            's#./node_modules/bootstrap/dist/css/bootstrap.min.css#./styles/bootstrap.min.css#' \
+            index.html > _site/index.html
+
+          cp style.css script.js _site/
+          cp -r scripts _site/
+
           cp node_modules/bootstrap/dist/css/bootstrap.min.css \
-            _site/node_modules/bootstrap/dist/css/bootstrap.min.css
+            _site/styles/bootstrap.min.css
+
+      - name: Verify Pages artifact
+        run: |
+          test -f _site/styles/bootstrap.min.css
+          grep 'bootstrap.min.css' _site/index.html
+          find _site -type f
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 
