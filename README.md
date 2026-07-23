@@ -137,6 +137,9 @@ http://<deine_ip>:<live-server-port>
 │   script.js
 │   style.css
 │   
+├───.github/
+│   └───workflows/
+│   
 ├───assets/
 │   ├───audio/
 │   ├───icons/
@@ -146,7 +149,6 @@ http://<deine_ip>:<live-server-port>
 │       database-questions.js
 │          
 └───styles/
-        bootstrap.min.css
     
 
 ```
