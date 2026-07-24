@@ -15,6 +15,8 @@
 <div align="center">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="40" alt="nodejs logo" />
         <img width="12" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="40" alt="npm logo" />
+        <img width="12" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" alt="bootstrap logo" />
         <img width="12" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
@@ -24,6 +26,8 @@
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
 </div>
 <img/>
+
+![Screenshot der QuizApp](/assets/img/screenshot.jpg)
 
 
 <div align="center">
@@ -57,7 +61,7 @@
 ⚙️ [Voraussetzungen](#️-voraussetzungen)
 - 💻 [Laufzeitumgebung](#-laufzeitumgebung)
 - 🎨 [Frontend-Technologien (UI)](#-frontend-technologien-ui)
-- 💾 [Datenquelle / Schnittstelle](#-datenquelle--schnittstelle)
+- 🧱 [Frontend Framework](#-frontend-framework)
 
 🚀 [Quickstart](#-quickstart)
 
@@ -71,11 +75,19 @@
 ## ⚙️ Voraussetzungen
 
 ### 💻 Laufzeitumgebung
+<div>
+        <img width="12" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" height="30" alt="nodejs logo" /> 
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="30" alt="npm logo" /> 
+</div>
 
+- Node.js 20 oder neuer
+- npm
 
 
 ### 🎨 Frontend-Technologien (UI)
 <div>
+        <img width="12" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" alt="html5 logo"  />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" alt="css3 logo" />
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
@@ -87,10 +99,13 @@
 | CSS3+ | Design und die visuelle Gestaltung |
 | JavaScript ES6+ | Dynamik und Interaktivität |
 
-### 💾 Datenquelle / Schnittstelle
+### 🧱 Frontend Framework
+<div>
+        <img width="12" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="30" alt="bootstrap logo" />
+</div>
 
-
-
+- Bootstrap
 
 ## 🚀 Quickstart
 
@@ -106,9 +121,18 @@ git clone https://github.com/ElenaH-2026/quiz-app.git
 cd quiz-app
 ```
 
+3. Installiere die Abhaengigkeiten:
+```bash
+npm install
+```
+
 3. Starte deinen lokalen Entwicklungsserver:
 ```text
 z.B. Live Server in VS Code
+oder:
+```
+```bash
+npm run dev
 ```
 
 4. Öffne danach die URL im Browser auf deinem Computer:
