@@ -3,7 +3,7 @@ name: Deploy Quiz App to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - feat/6-add-subpages
 
 permissions:
   contents: read
@@ -33,28 +33,39 @@ jobs:
 
       - name: Prepare Pages artifact
         run: |
-          mkdir -p _site/styles
-          mkdir -p _site/fonts
-          mkdir -p _site/assets/img
+          mkdir -p _site/styles _site/fonts _site/assets _site/quizpages
 
-          sed \
-            -e 's#./node_modules/bootstrap/dist/css/bootstrap.min.css#./styles/bootstrap.min.css#' \
-            -e 's#./node_modules/bootstrap-icons/font/bootstrap-icons.css#./fonts/bootstrap-icons.css#' \
-            index.html > _site/index.html
+          for file in index.html quizpages/*.html; do
+            target="_site/$file"
+            mkdir -p "$(dirname "$target")"
+            sed \
+              -e 's#\./node_modules/bootstrap/dist/css/bootstrap.min.css#./styles/bootstrap.min.css#g' \
+              -e 's#\.\./node_modules/bootstrap/dist/css/bootstrap.min.css#../styles/bootstrap.min.css#g' \
+              -e 's#\./node_modules/bootstrap-icons/font/bootstrap-icons.css#./fonts/bootstrap-icons.css#g' \
+              -e 's#\.\./node_modules/bootstrap-icons/font/bootstrap-icons.css#../fonts/bootstrap-icons.css#g' \
+              "$file" > "$target"
+          done
 
+          cp -r assets/. _site/assets/
+          cp -r quizpages/. _site/quizpages/
+          cp -r scripts/. _site/scripts/
           cp style.css script.js _site/
-          cp -r scripts _site/
 
           cp node_modules/bootstrap/dist/css/bootstrap.min.css _site/styles/bootstrap.min.css
           cp node_modules/bootstrap-icons/font/bootstrap-icons.css _site/fonts/bootstrap-icons.css
           cp -r node_modules/bootstrap-icons/font/fonts _site/fonts/
-          cp assets/img/bg-html.jpg _site/assets/img/bg-html.jpg
 
       - name: Verify Pages artifact
         run: |
+          test -f _site/index.html
+          test -f _site/quizpages/html-quiz.html
+          test -f _site/quizpages/css-quiz.html
+          test -f _site/quizpages/javascript-quiz.html
           test -f _site/styles/bootstrap.min.css
           test -f _site/fonts/bootstrap-icons.css
           test -f _site/assets/img/bg-html.jpg
+          test -f _site/assets/img/bg-css.jpg
+          test -f _site/assets/img/bg-javascript.jpg
           grep 'bootstrap.min.css' _site/index.html
           grep 'bootstrap-icons.css' _site/index.html
           find _site -type f

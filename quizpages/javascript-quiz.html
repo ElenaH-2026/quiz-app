@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App - JavaScript</title>
+
+    <script src="../scripts/database-questions.js"></script>
+    <!-- <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <!-- <script src="../script.js"></script> -->
+
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <div class="d-flex vh-100">
+
+        <nav class="navbar-dark bg-primary flex-column p-3">
+            <a class="navbar-brand text-white" href="../index.html">Quiz App - Home</a>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="./html-quiz.html">HTML</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="./css-quiz.html">CSS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./javascript-quiz.html">JavaScript</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="flex-grow-1 p-4 overflow-auto d-flex flex-column">
+            <h1 class="text-center mt-5">JavaScript Quiz</h1>
+
+            <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+                <div class="card">
+                    <img src="../assets/img/bg-javascript.jpg" class="card-img-top" alt="javascript background">
+                    <div class="card-body">
+                        <h5 class="card-title">Frage</h5>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort 1
+                            </div>
+                        </div>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort 2
+                            </div>
+                        </div>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort 3
+                            </div>
+                        </div>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort 4
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary quiz-nav-btn" aria-label="Zurück">
+                                <i class="bi bi-arrow-left-circle"></i>
+                            </button>
+                            <button class="btn btn-primary quiz-nav-btn" aria-label="Weiter">
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+
+</html>

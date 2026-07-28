@@ -124,9 +124,10 @@ cd quiz-app
 3. Installiere die Abhaengigkeiten:
 ```bash
 npm install
+npm install bootstrap-icons
 ```
 
-3. Starte deinen lokalen Entwicklungsserver:
+4. Starte deinen lokalen Entwicklungsserver:
 ```text
 z.B. Live Server in VS Code
 oder:
@@ -135,12 +136,12 @@ oder:
 npm run dev
 ```
 
-4. Öffne danach die URL im Browser auf deinem Computer:
+5. Öffne danach die URL im Browser auf deinem Computer:
 ```text
 http://localhost:<live-server-port>
 ```
 
-5. Oder öffne die URL im Browser auf deiner virtuellen Maschine:
+6. Oder öffne die URL im Browser auf deiner virtuellen Maschine:
 ```text
 http://<deine_ip>:<live-server-port>
 ```
@@ -172,8 +173,11 @@ http://<deine_ip>:<live-server-port>
 ├───scripts/
 │       database-questions.js
 │          
-└───styles/
-    
+└───quizpages/
+        html-quiz.html
+        css-quiz.html
+        javascript-quiz.html
+     
 
 ```
 

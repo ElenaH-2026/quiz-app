@@ -32,3 +32,15 @@
   transform: scale(1.05);
   box-shadow: 0 0 24px var(--bs-yellow);
 }
+
+.quiz-thumb {
+  aspect-ratio: 3 / 2;
+  width: 300px;
+  object-fit: cover;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quiz-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px var(--bs-yellow);
+}
