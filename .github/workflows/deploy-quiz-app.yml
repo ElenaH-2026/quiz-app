@@ -3,7 +3,7 @@ name: Deploy Quiz App to GitHub Pages
 on:
   push:
     branches:
-      - feat/3-create-bootstrap-card
+      - main
 
 permissions:
   contents: read
