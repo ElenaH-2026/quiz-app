@@ -3,7 +3,7 @@ name: Deploy Quiz App to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - feat/3-create-bootstrap-card
 
 permissions:
   contents: read
@@ -34,21 +34,26 @@ jobs:
       - name: Prepare Pages artifact
         run: |
           mkdir -p _site/styles
+          mkdir -p _site/fonts
 
           sed \
-            's#./node_modules/bootstrap/dist/css/bootstrap.min.css#./styles/bootstrap.min.css#' \
+            -e 's#./node_modules/bootstrap/dist/css/bootstrap.min.css#./styles/bootstrap.min.css#' \
+            -e 's#./node_modules/bootstrap-icons/font/bootstrap-icons.css#./fonts/bootstrap-icons.css#' \
             index.html > _site/index.html
 
           cp style.css script.js _site/
           cp -r scripts _site/
 
-          cp node_modules/bootstrap/dist/css/bootstrap.min.css \
-            _site/styles/bootstrap.min.css
+          cp node_modules/bootstrap/dist/css/bootstrap.min.css _site/styles/bootstrap.min.css
+          cp node_modules/bootstrap-icons/font/bootstrap-icons.css _site/fonts/bootstrap-icons.css
+          cp -r node_modules/bootstrap-icons/font/fonts _site/fonts/
 
       - name: Verify Pages artifact
         run: |
           test -f _site/styles/bootstrap.min.css
+          test -f _site/fonts/bootstrap-icons.css
           grep 'bootstrap.min.css' _site/index.html
+          grep 'bootstrap-icons.css' _site/index.html
           find _site -type f
 
       - name: Upload Pages artifact
