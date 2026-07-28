@@ -33,27 +33,45 @@ jobs:
 
       - name: Prepare Pages artifact
         run: |
-          mkdir -p _site/styles _site/fonts _site/assets _site/quizpages
+          mkdir -p _site
+          rm -rf _site/*
+          mkdir -p _site/styles _site/fonts
 
-          for file in index.html quizpages/*.html; do
-            target="_site/$file"
-            mkdir -p "$(dirname "$target")"
-            sed \
-              -e 's#\./node_modules/bootstrap/dist/css/bootstrap.min.css#./styles/bootstrap.min.css#g' \
-              -e 's#\.\./node_modules/bootstrap/dist/css/bootstrap.min.css#../styles/bootstrap.min.css#g' \
-              -e 's#\./node_modules/bootstrap-icons/font/bootstrap-icons.css#./fonts/bootstrap-icons.css#g' \
-              -e 's#\.\./node_modules/bootstrap-icons/font/bootstrap-icons.css#../fonts/bootstrap-icons.css#g' \
-              "$file" > "$target"
-          done
-
-          cp -r assets/. _site/assets/
-          cp -r quizpages/. _site/quizpages/
-          cp -r scripts/. _site/scripts/
+          cp -r assets _site/
+          cp -r scripts _site/
+          cp -r quizpages _site/
           cp style.css script.js _site/
 
           cp node_modules/bootstrap/dist/css/bootstrap.min.css _site/styles/bootstrap.min.css
           cp node_modules/bootstrap-icons/font/bootstrap-icons.css _site/fonts/bootstrap-icons.css
           cp -r node_modules/bootstrap-icons/font/fonts _site/fonts/
+
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path("_site")
+          for html_file in root.rglob("*.html"):
+              text = html_file.read_text(encoding="utf-8")
+
+              text = text.replace(
+                  "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+                  "./styles/bootstrap.min.css"
+              )
+              text = text.replace(
+                  "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+                  "../styles/bootstrap.min.css"
+              )
+              text = text.replace(
+                  "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
+                  "./fonts/bootstrap-icons.css"
+              )
+              text = text.replace(
+                  "../node_modules/bootstrap-icons/font/bootstrap-icons.css",
+                  "../fonts/bootstrap-icons.css"
+              )
+
+              html_file.write_text(text, encoding="utf-8")
+          PY
 
       - name: Verify Pages artifact
         run: |
@@ -61,6 +79,8 @@ jobs:
           test -f _site/quizpages/html-quiz.html
           test -f _site/quizpages/css-quiz.html
           test -f _site/quizpages/javascript-quiz.html
+          grep 'styles/bootstrap.min.css' _site/quizpages/html-quiz.html
+          grep 'fonts/bootstrap-icons.css' _site/quizpages/html-quiz.html
           test -f _site/styles/bootstrap.min.css
           test -f _site/fonts/bootstrap-icons.css
           test -f _site/assets/img/bg-html.jpg
