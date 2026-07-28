@@ -35,6 +35,7 @@ jobs:
         run: |
           mkdir -p _site/styles
           mkdir -p _site/fonts
+          mkdir -p _site/img
 
           sed \
             -e 's#./node_modules/bootstrap/dist/css/bootstrap.min.css#./styles/bootstrap.min.css#' \
@@ -47,11 +48,13 @@ jobs:
           cp node_modules/bootstrap/dist/css/bootstrap.min.css _site/styles/bootstrap.min.css
           cp node_modules/bootstrap-icons/font/bootstrap-icons.css _site/fonts/bootstrap-icons.css
           cp -r node_modules/bootstrap-icons/font/fonts _site/fonts/
+          cp assets/img/bg-html.jpg _site/img/bg-html.jpg
 
       - name: Verify Pages artifact
         run: |
           test -f _site/styles/bootstrap.min.css
           test -f _site/fonts/bootstrap-icons.css
+          test -f _site/img/bg-html.jpg
           grep 'bootstrap.min.css' _site/index.html
           grep 'bootstrap-icons.css' _site/index.html
           find _site -type f
