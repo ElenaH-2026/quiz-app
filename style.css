@@ -1,6 +1,4 @@
 :root {
-  --orange-hover: #e07013;
-  --orange-active: #d3670f;
   --bs-primary: var(--bs-orange);
   --bs-primary-rgb: 253, 126, 20;
   --bs-body-bg: var(--bs-gray-300);
@@ -8,14 +6,29 @@
 
 .nav-pills {
   --bs-nav-pills-link-active-bg: var(--bs-yellow);
-  --bs-nav-pills-link-active-color: #000;
+  --bs-nav-pills-link-active-color: var(--bs-black);
 }
 
 .btn-primary {
   --bs-btn-bg: var(--bs-orange);
   --bs-btn-border-color: var(--bs-orange);
-  --bs-btn-hover-bg: var(--orange-hover);
-  --bs-btn-hover-border-color: var(--orange-hover);
-  --bs-btn-active-bg: var(--orange-active);
-  --bs-btn-active-border-color: var(--orange-active);
+  --bs-btn-hover-bg: var(--bs-orange);
+  --bs-btn-hover-border-color: var(--bs-orange);
+  --bs-btn-active-bg: var(--bs-orange);
+  --bs-btn-active-border-color: var(--bs-orange);
+}
+
+.quiz-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.quiz-nav-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px var(--bs-yellow);
 }

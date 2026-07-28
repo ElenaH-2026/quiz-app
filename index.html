@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -33,10 +34,47 @@
             </ul>
         </nav>
 
-        <main class="flex-grow-1 p-4 overflow-auto">
+        <main class="flex-grow-1 p-4 overflow-auto d-flex flex-column">
             <h1 class="text-center mt-5">Quiz App</h1>
             <p class="text-center">Willkommen zum Quiz!</p>
             <button class="btn btn-primary d-block mx-auto mt-3" id="startQuizBtn">Quiz starten</button>
+
+            <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+                <div class="card" style="width: 800px;">
+                    <img src="./assets/img/bg-html.jpg" class="card-img-top" alt="html background">
+                    <div class="card-body">
+                        <h5 class="card-title">Frage</h5>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort 1
+                            </div>
+                        </div>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort 2
+                            </div>
+                        </div>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort 3
+                            </div>
+                        </div>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                Antwort 4
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary quiz-nav-btn" aria-label="Zurück">
+                                <i class="bi bi-arrow-left-circle"></i>
+                            </button>
+                            <button class="btn btn-primary quiz-nav-btn" aria-label="Weiter">
+                                <i class="bi bi-arrow-right-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
     </div>
