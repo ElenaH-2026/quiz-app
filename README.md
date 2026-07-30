@@ -1,6 +1,6 @@
 <div align="center">
         
-# ❓QuizApp❗
+# ❓Elenas Quiz App❗
 
 </div>
 
@@ -172,6 +172,7 @@ http://<deine_ip>:<live-server-port>
 │                 
 ├───scripts/
 │       database-questions.js
+│       templates.js
 │          
 └───quizpages/
         html-quiz.html
