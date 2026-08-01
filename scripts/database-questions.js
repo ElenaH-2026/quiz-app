@@ -1,8 +1,3 @@
-// Hinweis: Deine ursprüngliche Struktur im Prompt war syntaktisch ungültig
-// ("answers" als Array mit "key": [...] Einträgen). Ich habe daraus ein
-// gültiges Objekt gemacht: answers ist ein Objekt mit answer_1..answer_4,
-// jede davon selbst ein Objekt mit answer/is_correct.
-
 const htmlQuestions = [
   {
     question: "Welches HTML-Attribut sorgt dafür, dass ein Formularfeld nicht bearbeitbar ist, sein Wert aber trotzdem beim Absenden mitgesendet wird?",

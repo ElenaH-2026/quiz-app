@@ -3,7 +3,7 @@ name: Deploy Quiz App to GitHub Pages
 on:
   push:
     branches:
-      - feat/4-js-logic-question-answer-rendering-html
+      - main
 
 permissions:
   contents: read
