@@ -172,7 +172,6 @@ http://<deine_ip>:<live-server-port>
 │                 
 ├───scripts/
 │       database-questions.js
-│       templates.js
 │          
 └───quizpages/
         html-quiz.html

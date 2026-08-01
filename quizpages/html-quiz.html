@@ -43,15 +43,31 @@
                     <section class="card-body">
                         <h5 id="#QuestionText" class="card-title"></h5>
                         <div id="#AnswerButtons" class="d-flex flex-column gap-3">
+                            <div class="card">
+                                <p id="#AnswerText-1" class="card-body">
+                                </p>
+                            </div>
+                            <div class="card">
+                                <p id="#AnswerText-2" class="card-body">
+                                </p>
+                            </div>
+                            <div class="card">
+                                <p id="#AnswerText-3" class="card-body">
+                                </p>
+                            </div>
+                            <div class="card">
+                                <p id="#AnswerText-4" class="card-body">
+                                </p>
+                            </div>
                         </div>
                         <div class="d-flex justify-content-between mt-3">
-                            <button onclick="loadNextOrPreviousQuestion(htmlQuestions, questionIndex - 1)" 
-                                class="btn btn-primary quiz-nav-btn" aria-label="Zurück">
+                            <button onclick="loadPreviousOrNextQuestion(htmlQuestions, 'previous')" 
+                                id="#previousQuestionBtn" class="btn btn-primary quiz-nav-btn" aria-label="Zurück">
                                 <i class="bi bi-arrow-left-circle"></i>
                             </button>
                             <p class="align-content-center mb-0">Frage <span id="#QuestionCounter"></span> von <span id="#NumberOfQuestions"></span></p>
-                            <button onclick="loadNextOrPreviousQuestion(htmlQuestions, questionIndex + 1)" 
-                                class="btn btn-primary quiz-nav-btn" aria-label="Weiter">
+                            <button onclick="loadPreviousOrNextQuestion(htmlQuestions, 'next')" 
+                                id="#nextQuestionBtn" class="btn btn-primary quiz-nav-btn" aria-label="Weiter">
                                 <i class="bi bi-arrow-right-circle"></i>
                             </button>
                         </div>
